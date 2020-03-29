@@ -1,0 +1,39 @@
+﻿@model List<Alumno>
+
+@{
+    // Se usa Model. por convención
+    ViewData["Title"] = "Información Alumno";
+    // Plantillas
+    // Layout = "_Layout"; // Por defecto
+    Layout = "Simple"; // Propia
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>@ViewData["Title"]</h1>      
+            <h2>Desde la Vista Parcial</h2>
+            <!--Si no le paso el modelo en model a partial, trabaja con el modelo 
+                que tenga la vista general en este caso este Index-->
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var alumno in Model)
+                    {
+                        <tr>
+                            <td>@alumno.Nombre</td>
+                            <td>@alumno.UniqueId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <p>@ViewBag.Fecha</p>
+        </div>
+    </div>
+</div>
