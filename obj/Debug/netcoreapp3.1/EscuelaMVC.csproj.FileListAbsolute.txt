@@ -109,3 +109,4 @@ D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NE
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\EscuelaMVC.csproj.CoreCompileInputs.cache
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\EscuelaMVC.MvcApplicationPartsAssemblyInfo.cache
+D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Simple.cshtml.g.cs

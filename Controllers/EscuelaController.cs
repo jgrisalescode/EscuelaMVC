@@ -18,6 +18,8 @@ namespace EscuelaMVC.Controllers
             escuela.AnnioFundacion = 2005;
             escuela.EscuelaID = Guid.NewGuid().ToString();
             escuela.Nombre = "Platzi School";
+            // Tambien podemos enviar más cosas a la Vista por medio de @ViewBag o @ViewData
+            ViewBag.CualquierCosa = "Cualquier Cosa";
             return View(escuela); // Envaida a la vista (escuela)
         }
     }

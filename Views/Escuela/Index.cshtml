@@ -3,15 +3,20 @@
 @{
     // Se usa Model. por convención
     ViewData["Title"] = "Información Escuela";
+    // Plantillas
+    // Layout = "_Layout"; // Por defecto
+    Layout = "Simple"; // Propia
 }
 
 
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h1>Escuela</h1>
+            <h1>Escuela @ViewData["Title"]</h1>
             <h2>Nombre: @Model.Nombre</h2> 
             <p><strong>Año de fundación: @Model.AnnioFundacion</strong></p>
+            <p>@ViewBag.CualquierCosa</p>
+            <p>@ViewData["CualquierCosa"]</p>
         </div>
     </div>
 </div>
