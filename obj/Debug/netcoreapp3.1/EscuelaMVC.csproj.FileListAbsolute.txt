@@ -109,3 +109,5 @@ D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NE
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\staticwebassets\EscuelaMVC.StaticWebAssets.Manifest.cache
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\staticwebassets\EscuelaMVC.StaticWebAssets.xml
 D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\EscuelaMVC.genruntimeconfig.cache
+D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\EscuelaMVC.csprojAssemblyReference.cache
+D:\Documents\Cursos\Platsy\Desarrollo de Aplicaciones con ASP .NET\Curso ASP .NET Core\EscuelaMVC\obj\Debug\netcoreapp3.1\Razor\Views\Asignatura\Index.cshtml.g.cs

@@ -13,7 +13,13 @@
     <div class="row">
         <div class="col-6">
             <h1>Escuela @ViewData["Title"]</h1>
-            <h2>Nombre: @Model.Nombre</h2> 
+            <h2>Nombre: @Model.Nombre</h2>
+            <h3>Tipo de Escuela: @Model.TipoEscuela</h3>
+            <address>
+                <p>Dirección: @Model.Dirección</p>
+                <p>Dirección: @Model.Pais</p>
+                <p>Dirección: @Model.Ciudad</p>
+            </address>
             <p><strong>Año de fundación: @Model.AñoDeCreación</strong></p>
             <p>@ViewBag.CualquierCosa</p>
             <p>@ViewData["CualquierCosa"]</p>

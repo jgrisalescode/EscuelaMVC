@@ -1,0 +1,20 @@
+﻿@model Asignatura
+
+@{
+    // Se usa Model. por convención
+    ViewData["Title"] = "Información Asignatura";
+    // Plantillas
+    // Layout = "_Layout"; // Por defecto
+    Layout = "Simple"; // Propia
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h1>@ViewData["Title"]</h1>
+            <h2>Nombre: @Model.Nombre</h2>            
+            <p>@ViewBag.Fecha</p>
+        </div>
+    </div>
+</div>
