@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EscuelaMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EscuelaMVC.Controllers
@@ -11,8 +12,13 @@ namespace EscuelaMVC.Controllers
         public IActionResult Index()
         {
             // IActionResult es una interfáz genérica como IEnumerable, que luego podremos convertir
-            return View();
             // Como return View(); no tiene parámetros retorna la vista Index
+            // Creando el modelo en el controlador para enviárselo a la vista
+            var escuela = new Escuela();
+            escuela.AnnioFundacion = 2005;
+            escuela.EscuelaID = Guid.NewGuid().ToString();
+            escuela.Nombre = "Platzi School";
+            return View(escuela); // Envaida a la vista (escuela)
         }
     }
 }
