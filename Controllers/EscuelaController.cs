@@ -15,8 +15,8 @@ namespace EscuelaMVC.Controllers
             // Como return View(); no tiene parámetros retorna la vista Index
             // Creando el modelo en el controlador para enviárselo a la vista
             var escuela = new Escuela();
-            escuela.AnnioFundacion = 2005;
-            escuela.EscuelaID = Guid.NewGuid().ToString();
+            escuela.AñoDeCreación = 2005;
+            escuela.UniqueId = Guid.NewGuid().ToString();
             escuela.Nombre = "Platzi School";
             // Tambien podemos enviar más cosas a la Vista por medio de @ViewBag o @ViewData
             ViewBag.CualquierCosa = "Cualquier Cosa";
