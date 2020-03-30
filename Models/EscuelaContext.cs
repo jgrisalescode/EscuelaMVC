@@ -24,5 +24,52 @@ namespace EscuelaMVC.Models
         {
 
         }
+
+        // Sembrando datos en la BD InMemory
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            var escuela = new Escuela();
+            escuela.Id = Guid.NewGuid().ToString();
+            escuela.AñoDeCreación = 2005;
+            escuela.Nombre = "Platzi School";
+            escuela.Ciudad = "Bogotá";
+            escuela.Pais = "Colombia";
+            escuela.Dirección = "Calle Mayor";
+            escuela.TipoEscuela = TiposEscuela.Secundaria;
+
+            // Mandando la Escuala a la BD
+            modelBuilder.Entity<Escuela>().HasData(escuela);
+
+            modelBuilder.Entity<Asignatura>().HasData(
+                new Asignatura { Nombre = "Matemáticas", Id = Guid.NewGuid().ToString() },
+                new Asignatura { Nombre= "Educación Física", Id = Guid.NewGuid().ToString() },
+                new Asignatura { Nombre= "Castellano", Id = Guid.NewGuid().ToString() },
+                new Asignatura { Nombre= "Ciencias Naturales", Id = Guid.NewGuid().ToString() },
+                new Asignatura { Nombre= "Programación", Id = Guid.NewGuid().ToString() }
+                );
+
+            // Ahora los alumnos, con un truco por que devuelve una lista GenerarAlumnosAlAzar().ToArray()
+            modelBuilder.Entity<Alumno>().HasData(GenerarAlumnosAlAzar().ToArray());
+        }
+
+        // Método que se copia de AlumnoControler de forma provisional
+        private List<Alumno> GenerarAlumnosAlAzar()
+        {
+            string[] nombre1 = { "Alba", "Felipa", "Eusebio", "Farid", "Donald", "Alvaro", "Nicolás" };
+            string[] apellido1 = { "Ruiz", "Sarmiento", "Uribe", "Maduro", "Trump", "Toledo", "Herrera" };
+            string[] nombre2 = { "Freddy", "Anabel", "Rick", "Murty", "Silvana", "Diomedes", "Nicomedes", "Teodoro" };
+
+            var listaAlumnos = from n1 in nombre1
+                               from n2 in nombre2
+                               from a1 in apellido1
+                               select new Alumno
+                               {
+                                   Nombre = $"{n1} {n2} {a1}",
+                                   Id = Guid.NewGuid().ToString()
+                               };
+
+            return listaAlumnos.OrderBy((al) => al.Id).ToList();
+        }
     }
 }

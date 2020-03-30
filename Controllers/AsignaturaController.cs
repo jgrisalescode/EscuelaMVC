@@ -13,7 +13,7 @@ namespace EscuelaMVC.Controllers
         {
             var asignatura = new Asignatura
             {
-                UniqueId = Guid.NewGuid().ToString(),
+                Id = Guid.NewGuid().ToString(),
                 Nombre = "Programación"
             };
             ViewBag.Fecha = DateTime.Now;
@@ -24,20 +24,20 @@ namespace EscuelaMVC.Controllers
         {
             var listaAsignaturas = new List<Asignatura>(){
                             new Asignatura{Nombre="Matemáticas",
-                                UniqueId= Guid.NewGuid().ToString()
+                                Id= Guid.NewGuid().ToString()
                             } ,
                             new Asignatura{Nombre="Educación Física",
-                                UniqueId= Guid.NewGuid().ToString()
+                                Id= Guid.NewGuid().ToString()
                             },
                             new Asignatura{Nombre="Castellano",
-                                UniqueId= Guid.NewGuid().ToString()
+                                Id= Guid.NewGuid().ToString()
                             },
                             new Asignatura{Nombre="Ciencias Naturales",
-                                UniqueId= Guid.NewGuid().ToString()
+                                Id= Guid.NewGuid().ToString()
                             }
                             ,
                             new Asignatura{Nombre="Programación",
-                                UniqueId= Guid.NewGuid().ToString()
+                                Id= Guid.NewGuid().ToString()
                             }
                 };
             ViewBag.Fecha = DateTime.Now;
