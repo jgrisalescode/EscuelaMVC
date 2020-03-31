@@ -5,6 +5,10 @@ namespace EscuelaMVC.Models
 {
     public class Alumno: ObjetoEscuelaBase
     {
-        public List<Evaluación> Evaluaciones { get; set; } = new List<Evaluación>();
+        // Tabla padre de Asignatura Curso, a por su referencia
+        public string CursoId { get; set; }
+        // Navegación
+        public Curso Curso { get; set; }
+        public List<Evaluación> Evaluaciones { get; set; }
     }
 }
