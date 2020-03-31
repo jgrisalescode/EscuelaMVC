@@ -1,6 +1,7 @@
-﻿@model List<Asignatura>
+﻿@model IEnumerable<Asignatura>
 
 @{
+    // Se ha cambiado de List a IEnumerable para que sea compatible con el DBSet del Context
     // Se usa Model. por convención
     ViewData["Title"] = "Información Asignatura";
     // Plantillas
