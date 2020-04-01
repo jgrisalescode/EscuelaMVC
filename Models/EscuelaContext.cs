@@ -98,35 +98,40 @@ namespace EscuelaMVC.Models
                     Id = Guid.NewGuid().ToString(),
                     EscuelaID = escuela.Id,
                     Nombre = "101",
-                    Jornada = TiposJornada.Mañana
+                    Jornada = TiposJornada.Mañana,
+                    Dirección = "Calle Mayor"
                 },
                 new Curso()
                 {
                     Id = Guid.NewGuid().ToString(),
                     EscuelaID = escuela.Id,
                     Nombre = "201",
-                    Jornada = TiposJornada.Mañana
+                    Jornada = TiposJornada.Mañana,
+                    Dirección = "Calle Mayor"
                 },
                 new Curso()
                 {
                     Id = Guid.NewGuid().ToString(),
                     EscuelaID = escuela.Id,
                     Nombre = "301",
-                    Jornada = TiposJornada.Mañana
+                    Jornada = TiposJornada.Mañana,
+                    Dirección = "Calle Mayor"
                 },
                 new Curso()
                 {
                     Id = Guid.NewGuid().ToString(),
                     EscuelaID = escuela.Id,
                     Nombre = "401",
-                    Jornada = TiposJornada.Tarde
+                    Jornada = TiposJornada.Tarde,
+                    Dirección = "Calle Mayor"
                 },
                 new Curso()
                 {
                     Id = Guid.NewGuid().ToString(),
                     EscuelaID = escuela.Id,
                     Nombre = "501",
-                    Jornada = TiposJornada.Tarde
+                    Jornada = TiposJornada.Tarde,
+                    Dirección = "Calle Mayor"
                 }
 
             };
