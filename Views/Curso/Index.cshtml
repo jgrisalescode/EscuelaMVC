@@ -1,0 +1,28 @@
+﻿@model Curso
+
+@{
+    // Se usa Model. por convención
+    ViewData["Title"] = "Información Curso";
+    // Plantillas
+    // Layout = "_Layout"; // Por defecto
+    Layout = "Simple"; // Propia
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>@ViewData["Title"]</h1>
+            <h2>Desde la Vista Normal</h2>
+            <p>
+                Nombre: @Model.Nombre<br />
+                Id: @Model.Id
+            </p>            
+            <h2>Desde la Vista Parcial</h2>
+            <!--Si no le paso el modelo en model a partial, trabaja con el modelo 
+                que tenga la vista general en este caso este Index-->
+            <partial name="ObjetoEscuelaSimple"/>
+            <p>@ViewBag.Fecha</p>
+        </div>
+    </div>
+</div>

@@ -7,11 +7,11 @@ using EscuelaMVC.Models;
 
 namespace EscuelaMVC.Controllers
 {
-    public class AlumnoController : Controller
+    public class CursoController : Controller
     {
         private EscuelaContext _context;
 
-        public AlumnoController(EscuelaContext context)
+        public CursoController(EscuelaContext context)
         {
             _context = context;
         }
@@ -20,19 +20,19 @@ namespace EscuelaMVC.Controllers
         {
             if (!string.IsNullOrWhiteSpace(id))
             {
-                var alumno = from alum in _context.Alumnos
-                             where alum.Id == id
-                             select alum;
-                return View(alumno.SingleOrDefault());
+                var curso = from cur in _context.Cursos
+                             where cur.Id == id
+                             select cur;
+                return View(curso.SingleOrDefault());
             } else
             {
-                return View("MultiAlumno", _context.Alumnos);
+                return View("MultiCurso", _context.Cursos);
             }
         }
 
-        public IActionResult MultiAlumno()
+        public IActionResult MultiCurso()
         {
-            return View("MultiAlumno",_context.Alumnos);
+            return View("MultiCurso",_context.Cursos);
         }       
 
     }
