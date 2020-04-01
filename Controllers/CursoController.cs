@@ -45,14 +45,21 @@ namespace EscuelaMVC.Controllers
         [HttpPost]
         public IActionResult Create(Curso curso)
         {
-            // Y con este resuelvo lo que me llega del post
-            ViewBag.Fecha = DateTime.Now;
-            var escuela = _context.Escuelas.FirstOrDefault();
-            curso.Id = Guid.NewGuid().ToString();
-            curso.EscuelaID = escuela.Id;
-            _context.Cursos.Add(curso);
-            _context.SaveChanges();
-            return View();
+            // Validando el modelo Curso que tiene la anotacion [Required] en Nombre
+            if (ModelState.IsValid)
+            {
+                // Y con este resuelvo lo que me llega del post
+                var escuela = _context.Escuelas.FirstOrDefault();
+                curso.Id = Guid.NewGuid().ToString();
+                curso.EscuelaID = escuela.Id;
+                _context.Cursos.Add(curso);
+                _context.SaveChanges();
+                ViewBag.MensajeExtra = "Curso Creado";
+                return View("Index", curso);
+            } else
+            {
+                return View(curso);
+            }
         }
 
     }
