@@ -1,0 +1,37 @@
+﻿@model Curso
+
+@{
+    // Se usa Model. por convención
+    ViewData["Title"] = "Creación Curso";
+    // Plantillas
+    // Layout = "_Layout"; // Por defecto
+    Layout = "Simple"; // Propia
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>@ViewData["Title"]</h1>
+            <!-- El asp-for="" representa un campo del Modelo OJO muy importante  en este caso
+                Curso, por lo tanto los debes nombrar exactamente como está el modelo-->
+            <form action="" method="post">
+                <div class="form-group row">
+                    <label asp-for="Nombre" class="col-2"></label>
+                    <input asp-for="Nombre" type="text" class="col-10 form-control">
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Dirección" class="col-2"></label>
+                    <input asp-for="Dirección" type="text" class="col-10 form-control">
+                </div>
+                <div class="form-group row">
+                    <label asp-for="Jornada" class="col-2"></label>
+                    <input asp-for="Jornada" type="text" class="col-10 form-control">
+                </div>
+                <div class="form-group row">
+                    <input type="submit" class="col-2 btn btn-dark" value="Sign in">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -33,7 +33,27 @@ namespace EscuelaMVC.Controllers
         public IActionResult MultiCurso()
         {
             return View("MultiCurso",_context.Cursos);
-        }       
+        }
+
+        public IActionResult Create()
+        {
+            // Con este Método renderizo el formulario
+            ViewBag.Fecha = DateTime.Now;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Curso curso)
+        {
+            // Y con este resuelvo lo que me llega del post
+            ViewBag.Fecha = DateTime.Now;
+            var escuela = _context.Escuelas.FirstOrDefault();
+            curso.Id = Guid.NewGuid().ToString();
+            curso.EscuelaID = escuela.Id;
+            _context.Cursos.Add(curso);
+            _context.SaveChanges();
+            return View();
+        }
 
     }
 }
