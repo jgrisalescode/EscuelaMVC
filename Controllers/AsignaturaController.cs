@@ -16,10 +16,29 @@ namespace EscuelaMVC.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        /*
+        * Por convencion el parámetro que recibe la URL que está en Startup.cs es
+        * pattern: "{controller=Escuela}/{action=Index}/{id?}");
+        * Su nombre es id por lo tanto el parámetro de éste método debe llamarse igual OJO
+        * Pero si quiero que el parámetro no sea id sino personalizado, como este que es
+        * asignaturaId, debo configurar las rutas de esta manera:
+        */
+        [Route("Asignatura/Index")] // Por si entran sin parámetro
+        [Route("Asignatura/Index/{asignaturaId}")] // El parámetro custom
+
+        public IActionResult Index(string asignaturaId)
         {
-            // Ahora tratendo los datos aque estén en la BD
-            return View(_context.Asignaturas.FirstOrDefault());
+            if (!string.IsNullOrWhiteSpace(asignaturaId))
+            {
+                var asignatura = from asig in _context.Asignaturas
+                                 where asig.Id == asignaturaId
+                                 select asig;
+                return View(asignatura.SingleOrDefault());
+            }
+            else
+            {
+                return View("MultiAsignatura", _context.Asignaturas);
+            }
         }
 
         public IActionResult MultiAsignatura()
